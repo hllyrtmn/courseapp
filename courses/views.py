@@ -6,7 +6,9 @@ def courses(request):
     return HttpResponse("kurslar sayfası")
 def details(request):
     return HttpResponse("detaylar sayfası")
-def programming(request):
-    return HttpResponse("programlama sayfası")
-def mobile_app(request):
-    return HttpResponse("mobil uygulama sayfası")
+# def programming(request):
+#     return HttpResponse("programlama sayfası")
+# def mobile_app(request):
+#     return HttpResponse("mobil uygulama sayfası")
+def get_courses_by_cname(request,category):
+    return HttpResponse(f'{category} sayfası')
