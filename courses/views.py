@@ -1,5 +1,13 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import redirect, render
+
+
+data={
+    "mobil":"mobil programlama detayları",
+    "masaüstü":"masaüstü programlama detayları",
+    "gömülü-sistemler":"gömülü sistemler detayları",
+}
+
 
 # Create your views here.
 def courses(request):
@@ -11,4 +19,15 @@ def details(request):
 # def mobile_app(request):
 #     return HttpResponse("mobil uygulama sayfası")
 def get_courses_by_cname(request,category):
-    return HttpResponse(f'{category} sayfası')
+    
+    try:
+        category_text = data[category]
+        return HttpResponse(f'{category} sayfası')
+    except:
+        return HttpResponseNotFound("böyle bir kategori bulunamadı")
+
+def category_by_id(request,category_id):
+    category_name = list(data.keys())
+    if(category_id > len(category_name)):
+        return HttpResponseNotFound("böyle bir kategori bulunamadı")
+    return redirect('/kurslar/'+category_name[category_id-1])
