@@ -21,8 +21,8 @@ import courses
 import pages
 
 urlpatterns = [
+    path('',include('pages.urls')),
+    path('kurslar/',include('courses.urls')),
     path('admin/', admin.site.urls),
-    path('kurs/',include(courses.urls)),
-    path('',include(pages.urls))
 
 ]

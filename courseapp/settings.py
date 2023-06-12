@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courses', #added app
-    'pages'
+    'pages',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
