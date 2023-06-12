@@ -13,45 +13,13 @@
     <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
-    <navbar class="navbar navbar-expand-lg bg-primary navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">Course App</a>
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-        </div>
-
-    </navbar>
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Programming</a>
-                    <a href="#" class="list-group-item list-group-item-action">Web Developing</a>
-                    <a href="#" class="list-group-item list-group-item-action">Mobile Developing</a>
-                </div>
-            </div>
-            <div class="col-9">
-
-                {% block content %}{% endblock content %}
-
-
-            </div>
-        </div>
-    </div>
+    {% include 'partials/_nav.html' %}
     
+    <div class="container mt-3">
 
+        {% block content %}{% endblock content %}
 
-
-
+    </div>
 
 
   </body>
