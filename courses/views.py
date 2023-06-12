@@ -9,6 +9,9 @@ data={
     "gömülü-sistemler":"gömülü sistemler detayları",
 }
 
+def index(request):
+    return render(request,'index.html')
+
 
 # Create your views here.
 def courses(request):

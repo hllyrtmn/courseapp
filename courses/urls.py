@@ -4,7 +4,7 @@ from courses import views
 
 
 urlpatterns = [
-    path('',views.courses),
+    path('',views.index),
     path('liste',views.courses),
     path('detaylar',views.details),
     # path('programlama',views.programming), dinamik hale getirerek metod tanımlamasından kurtulduk
