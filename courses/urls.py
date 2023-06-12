@@ -9,6 +9,6 @@ urlpatterns = [
     path('detaylar',views.details),
     # path('programlama',views.programming), dinamik hale getirerek metod tanımlamasından kurtulduk
     # path('mobil-uygulamalar',views.mobile_app), bir alt satırdaki yaptığımız gibi
-    path('<int:category_id>',views.category_by_id),
-    path('<str:category>',views.get_courses_by_cname),
+    path('kategoriler/<int:category_id>',views.category_by_id),
+    path('kategoriler/<str:category>',views.get_courses_by_cname,name='category_by_id'),
 ]
