@@ -12,7 +12,14 @@ data={
 
 # Create your views here.
 def courses(request):
-    return HttpResponse("kurslar sayfası")
+    list_items = ""
+    for category in list(data.keys()):
+        redirect_url = reverse('category_by_id',args=[category])
+        list_items += f"<li><a href='{redirect_url}'>{category}</a></li>" 
+    return HttpResponse(f"<ul>{list_items}</ul>")
+
+
+
 def details(request):
     return HttpResponse("detaylar sayfası")
 # def programming(request):
