@@ -1,5 +1,7 @@
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">Programming</a>
-    <a href="#" class="list-group-item list-group-item-action">Web Developing</a>
-    <a href="#" class="list-group-item list-group-item-action">Mobile Developing</a>
+
+    {% for item in data %}
+    <a href="#" class="list-group-item list-group-item-action">{{item}}</a>
+    {% endfor %}
+    <a href="#" class="list-group-item list-group-item-action">Deneme</a>
 </div>
