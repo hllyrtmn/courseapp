@@ -32,8 +32,11 @@ def details(request):
 def get_courses_by_cname(request,category):
     
     try:
-        category_text = data[category]
-        return HttpResponse(f'{category} sayfası')
+        category_name = data[category]
+        return render(request,'courses/courses.html',{
+            'category':category,
+            'category_name': category_name
+        })
     except:
         return HttpResponseNotFound("böyle bir kategori bulunamadı")
 
@@ -43,5 +46,6 @@ def category_by_id(request,category_id):
         return HttpResponseNotFound("böyle bir kategori bulunamadı")
     
     redirect_url = reverse('category_by_id',args=[category_name[category_id-1]])
+
 
     return redirect(redirect_url)
