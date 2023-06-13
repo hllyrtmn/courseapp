@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.views.decorators.cache import cache_page
 
 
 data={
@@ -12,6 +13,7 @@ data={
 }
 
 # Create your views here.
+@cache_page(60*15)
 def index(request):
     return render(request,'courses/courses.html',{'data':data.keys})
 
@@ -21,7 +23,8 @@ def get_courses_by_cname(request,category):
         category_name = data[category]
         return render(request,'courses/courses.html',{
             'category':category,
-            'category_name': category_name
+            'category_name': category_name,
+            'data':data.keys
         })
     except:
         return HttpResponseNotFound("böyle bir kategori bulunamadı")
