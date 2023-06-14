@@ -5,6 +5,6 @@ from courses import views
 
 urlpatterns = [
     path('',views.index),
-    path('kategoriler/<int:category_id>',views.category_by_id),
-    path('kategoriler/<str:category>',views.get_courses_by_cname,name='category_by_id'),
+    path('kurslar/',views.index),
+    path('kategoriler/<int:category_id>',views.get_category_by_id,name="category_id"),
 ]
