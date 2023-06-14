@@ -100,7 +100,7 @@ def index(request):
 
 def get_category_by_id(request,category_id):
     data= db["courses"]
-    filtered_data = [course for course in data if course.get('category_id')== category_id]
+    filtered_data = [course for course in data if course.get('category_id') == category_id]
     # return HttpResponse(filtered_data)
-    return render(request, 'course/index.html',{'categories':db["categories"],"courses":filtered_data})
+    return render(request, 'courses/partials/_courses.html',{"courses":filtered_data})
     
