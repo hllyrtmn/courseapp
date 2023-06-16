@@ -1,0 +1,13 @@
+{% if courses.paginator.num_pages > 1 %}
+<nav class="mt-3" aria-label="...">
+  <ul class="pagination pagination-sm">
+    {% for i in courses.paginator.page_range %} {% if page.obj.number == i %}
+    <li class="page-item">
+      <a href="?page={{i}}" class="page-link active">{{i}}</a>
+    </li>
+    {% else %}
+    <li class="page-item"><a href="?page={{i}}" class="page-link">{{i}}</a></li>
+    {% endif %} {% endfor %}
+  </ul>
+</nav>
+{% endif %}
