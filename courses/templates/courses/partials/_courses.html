@@ -3,7 +3,7 @@
 <div class="card mt-3">
   <div class="row">
     <div class="col-4">
-      <a href="{% url 'detail_page' course.slug %}">
+      <a href="{% url 'detail' course.slug %}">
       <img
         class="img-fluid rounded-start"
         src="{% static 'courses/img/'%}{{course.imageUrl}}"

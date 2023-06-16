@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
+from impersonate.views import impersonate as impersonate_view, stop_impersonate
 import courses
 import pages
 
@@ -24,5 +24,7 @@ urlpatterns = [
     path('',include('pages.urls')),
     path('kurslar/',include('courses.urls')),
     path('admin/', admin.site.urls),
+    path('impersonate/<int:user_id>/', impersonate_view, name='impersonate-start'),
+    path('impersonate/stop/', stop_impersonate, name='impersonate-stop'),
 
 ]
