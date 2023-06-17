@@ -35,7 +35,7 @@ def search(request):
     })
 
 def create(request):
-    
 
 
-    return render('courses/create.html')
+
+    return render(request,'courses/create.html')

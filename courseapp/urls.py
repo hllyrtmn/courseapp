@@ -22,7 +22,7 @@ import pages
 
 urlpatterns = [
     path('',include('pages.urls')),
-    path('kurslar/',include('courses.urls')),
+    path('courses/',include('courses.urls')),
     path('admin/', admin.site.urls),
     path('impersonate/<int:user_id>/', impersonate_view, name='impersonate-start'),
     path('impersonate/stop/', stop_impersonate, name='impersonate-stop'),

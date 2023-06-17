@@ -1,6 +1,6 @@
 <div class="list-group">
-    <a href="/kurslar" class="list-group-item list-group-item-action {% if selected == null %}active{% endif %}">Tüm Kurslar</a>
+    <a href="/courses" class="list-group-item list-group-item-action {% if selected == null %}active{% endif %}">Tüm Kurslar</a>
     {% for category in categories %}
-    <a href="/kurslar/kategoriler/{{category.slug}}" class="list-group-item list-group-item-action {% if selected == category.slug %}active{% endif %}">{{category.categoryName}}</a>
+    <a href="/courses/category/{{category.slug}}" class="list-group-item list-group-item-action {% if selected == category.slug %}active{% endif %}">{{category.categoryName}}</a>
     {% endfor %}
 </div>
