@@ -12,5 +12,10 @@
                 <a class="nav-link" href="/about">About</a>
             </li>
         </ul>
+            <form class="d-flex" action="{% url 'search' %}">
+                <input class="form-control me-1" type="text" name="q"placeholder="Anahtar Kelime">
+                <button type="submit" class="btn btn-success">Ara</button>
+            </form>
+            <button class="btn btn-danger ms-3"><a class="nav-link ml-3" href="/admin">Login</a></button>
     </div>
 </navbar>

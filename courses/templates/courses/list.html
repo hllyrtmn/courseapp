@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            {% include 'courses/partials/_categories.html' %}
+        </div>
+        <div class="col-9">
+            {% include 'courses/partials/_courses.html' %}
+            {% include 'courses/partials/_pagination.html' %}
+        </div>
+    </div>
+{% endblock content %}

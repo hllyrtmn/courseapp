@@ -14,8 +14,6 @@ class Category(models.Model):
     def __str__(self) -> str:
         return f"{self.categoryName}"
 
-
-
 class Course(models.Model):
     title = models.CharField(max_length=30)
     description = models.TextField()
